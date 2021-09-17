@@ -16,6 +16,9 @@ public abstract class AbstractDefaultMessage implements Message {
   private static final String INVALID_SENDER = "'sender' must not be empty or null";
   private static final String INVALID_ADDRESS = "'returnAddress' must not be empty or null";
 
+  protected AbstractDefaultMessage() {
+  }
+
   @Override
   public abstract String getSender();
 
