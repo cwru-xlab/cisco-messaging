@@ -1,6 +1,6 @@
 package org.cirrus.messaging.core.message;
 
-public class DefaultMessageFactory implements MessageFactory {
+public final class DefaultMessageFactory implements MessageFactory {
 
   private final String sender;
   private final String returnAddress;
