@@ -33,16 +33,16 @@ public abstract class AbstractDefaultMessage implements Message {
 
   @Value.Check
   protected final void checkBody() {
-    Preconditions.checkState(Strings.isNullOrEmpty(getBody()), INVALID_BODY);
+    Preconditions.checkState(!Strings.isNullOrEmpty(getBody()), INVALID_BODY);
   }
 
   @Value.Check
   protected final void checkSender() {
-    Preconditions.checkState(Strings.isNullOrEmpty(getSender()), INVALID_SENDER);
+    Preconditions.checkState(!Strings.isNullOrEmpty(getSender()), INVALID_SENDER);
   }
 
   @Value.Check
   protected final void checkReturnAddress() {
-    Preconditions.checkState(Strings.isNullOrEmpty(getReturnAddress()), INVALID_ADDRESS);
+    Preconditions.checkState(!Strings.isNullOrEmpty(getReturnAddress()), INVALID_ADDRESS);
   }
 }
