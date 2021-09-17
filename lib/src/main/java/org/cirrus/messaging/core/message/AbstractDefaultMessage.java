@@ -17,6 +17,7 @@ public abstract class AbstractDefaultMessage implements Message {
   private static final String INVALID_ADDRESS = "'returnAddress' must not be empty or null";
 
   protected AbstractDefaultMessage() {
+    // Fix "At Least One Constructor" Checkstyle violation
   }
 
   @Override
