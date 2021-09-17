@@ -1,14 +1,13 @@
 package org.cirrus.messaging.core.message;
 
 import com.google.common.base.Preconditions;
-import com.google.common.base.Strings;
 import org.immutables.value.Value;
 
 @Value.Immutable
 public abstract class DefaultMessage implements Message {
 
   private static final String NO_SUBSCRIPTION = null;
-  private static final String INVALID_BODY_MESSAGE = "'body' must not be null or empty";
+  private static final String INVALID_BODY_MESSAGE = "'body' must not be null";
 
   @Override
   public abstract String getSender();
@@ -27,8 +26,7 @@ public abstract class DefaultMessage implements Message {
 
   @Value.Check
   protected void checkBody() {
-    boolean isNullOrEmpty = Strings.isNullOrEmpty(getBody());
-    Preconditions.checkState(isNullOrEmpty, INVALID_BODY_MESSAGE);
+    Preconditions.checkNotNull(getBody(), INVALID_BODY_MESSAGE);
   }
 
   public static Builder newBuilder() {
