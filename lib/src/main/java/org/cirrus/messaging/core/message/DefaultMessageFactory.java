@@ -1,5 +1,8 @@
 package org.cirrus.messaging.core.message;
 
+/**
+ * A {@link MessageFactory} that creates {@link DefaultMessage} instances.
+ */
 public final class DefaultMessageFactory implements MessageFactory {
 
   private final String sender;
@@ -10,10 +13,18 @@ public final class DefaultMessageFactory implements MessageFactory {
     this.returnAddress = returnAddress;
   }
 
+  /**
+   * Return an instance of {@link DefaultMessageFactory} that creates {@link DefaultMessage}
+   * instances with a given {@link #sender} and {@link #returnAddress}
+   *
+   * @param sender        The endpoint from which messages are sent.
+   * @param returnAddress The endpoint to which replies to the sender can be sent.
+   */
   public static DefaultMessageFactory of(String sender, String returnAddress) {
     return new DefaultMessageFactory(sender, returnAddress);
   }
 
+  @Override
   public Message create(String body) {
     return DefaultMessage.newBuilder()
         .setSender(sender)
