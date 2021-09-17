@@ -21,6 +21,4 @@ import org.immutables.value.Value.Style.ImplementationVisibility;
     visibility = ImplementationVisibility.PACKAGE,
     of = "new",
     defaults = @Value.Immutable(prehash = true))
-@interface ImmutableStyle {
-
-}
+@interface ImmutableStyle {}
