@@ -14,11 +14,12 @@ public final class DefaultMessageFactory implements MessageFactory {
   }
 
   /**
-   * Return an instance of {@link DefaultMessageFactory} that creates {@link DefaultMessage}
+   * Creates an instance of {@link DefaultMessageFactory} that creates {@link DefaultMessage}
    * instances with a given {@link #sender} and {@link #returnAddress}
    *
    * @param sender        The endpoint from which messages are sent.
    * @param returnAddress The endpoint to which replies to the sender can be sent.
+   * @return An instance of {@link DefaultMessageFactory}.
    */
   public static DefaultMessageFactory of(String sender, String returnAddress) {
     return new DefaultMessageFactory(sender, returnAddress);

@@ -7,8 +7,10 @@ package org.cirrus.messaging.core.message;
 public interface MessageFactory {
 
   /**
+   * Creates a {@link Message} instance with a given {@code body}.
+   *
    * @param body The content of the message.
-   * @return A message instance.
+   * @return A {@link Message} instance.
    */
   public abstract Message create(String body);
 }
