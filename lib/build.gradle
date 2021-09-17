@@ -31,7 +31,7 @@ version versions.Cirrus
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(versions.Java)
-        vendor = JvmVendorSpec.AMAZON
+        vendor = JvmVendorSpec.ADOPTOPENJDK
     }
 }
 
