@@ -1,5 +1,9 @@
 package org.cirrus.messaging.core.message;
 
+/**
+ * A unit of data transmitted between endpoints that allows distinct entities to communicate with
+ * each other.
+ */
 public interface Message {
 
   /**

@@ -5,6 +5,10 @@ import org.cirrus.messaging.core.message.MessageFactory;
 import org.cirrus.messaging.core.pubsub.Publisher;
 import org.cirrus.messaging.core.pubsub.Subscriber;
 
+/**
+ * An {@link AbstractNode} that uses a {@link MessageFactory} instance to create new {@link Message}
+ * instances to publish.
+ */
 public abstract class AbstractMessageNode extends AbstractNode<Message> {
 
   private final MessageFactory messageFactory;

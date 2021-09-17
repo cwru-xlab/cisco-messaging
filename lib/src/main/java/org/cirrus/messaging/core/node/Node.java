@@ -16,7 +16,7 @@ import java.util.concurrent.Flow;
  * {@link Flow.Subscription}. It may also refer to other contexts, such as when the {@link Node}
  * will be removed from the network.</p>
  *
- * @param <T> The type of message the node processes.
+ * @param <T> The type of message the {@link Node} processes.
  */
 public interface Node<T> {
 
