@@ -2,9 +2,9 @@ package org.cirrus.messaging.core.node;
 
 public interface Node<T> {
 
-  void onNext(T message);
+  public abstract void onNext(T message);
 
-  void onError(Throwable throwable);
+  public abstract void onError(Throwable throwable);
 
-  void onComplete();
+  public abstract void onComplete();
 }

@@ -2,12 +2,12 @@ package org.cirrus.messaging.core.message;
 
 public interface Message {
 
-  String getSender();
+  public abstract String getSender();
 
-  String getReturnAddress();
+  public abstract String getReturnAddress();
 
-  String getSubscription();
+  public abstract String getSubscription();
 
-  String getBody();
+  public abstract String getBody();
 
 }

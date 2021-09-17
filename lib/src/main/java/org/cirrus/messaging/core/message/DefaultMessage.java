@@ -35,14 +35,14 @@ public abstract class DefaultMessage implements Message {
 
   public interface Builder {
 
-    Builder setSender(String sender);
+    public abstract DefaultMessage build();
 
-    Builder setReturnAddress(String returnAddress);
+    public abstract Builder setSender(String sender);
 
-    Builder setSubscription(String subscription);
+    public abstract Builder setReturnAddress(String returnAddress);
 
-    Builder setBody(String body);
+    public abstract Builder setSubscription(String subscription);
 
-    DefaultMessage build();
+    public abstract Builder setBody(String body);
   }
 }
