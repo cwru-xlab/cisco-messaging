@@ -13,11 +13,11 @@ public abstract class AbstractNode<T> implements Node<T> {
     this.subscriber = subscriber;
   }
 
-  public Publisher<T> getPublisher() {
+  public final Publisher<T> getPublisher() {
     return publisher;
   }
 
-  public Subscriber getSubscriber() {
+  public final Subscriber getSubscriber() {
     return subscriber;
   }
 }

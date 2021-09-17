@@ -15,7 +15,7 @@ public abstract class AbstractMessageNode extends AbstractNode<Message> {
     this.messageFactory = messageFactory;
   }
 
-  public MessageFactory getMessageFactory() {
+  public final MessageFactory getMessageFactory() {
     return messageFactory;
   }
 }
