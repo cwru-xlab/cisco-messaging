@@ -57,9 +57,10 @@ test {
 }
 
 distributions {
-    main({
+    //noinspection GroovyAssignabilityCheck
+    main {
         distributionBaseName = "$rootProject.name"
-    } as String)
+    }
 }
 
 publishing {
