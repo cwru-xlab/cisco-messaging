@@ -24,11 +24,10 @@ public interface Message {
   public abstract String getReturnAddress();
 
   /**
-   * In pub/sub contexts, the subscription is the contract between the publisher and the subscriber
-   * that allows the subscriber to receive messages from the publisher and for the publisher to send
-   * messages to the subscriber. The subscription identifier is typically created when a subscriber
-   * initially subscribes to the publisher. This identifier can then be used to cancel the
-   * subscription.
+   * The subscription is the contract between the publisher and the subscriber that allows the
+   * subscriber to receive messages from the publisher and for the publisher to send messages to the
+   * subscriber. The subscription identifier is typically created when a subscriber initially
+   * subscribes to the publisher. This identifier can then be used to cancel the subscription.
    *
    * @return The subscription associated with the message.
    */

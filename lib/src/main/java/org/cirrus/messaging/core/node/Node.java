@@ -3,11 +3,11 @@ package org.cirrus.messaging.core.node;
 import java.util.concurrent.Flow;
 
 /**
- * <p>A computational unit in a network. A {@link Node} receives a stream of messages to process.
- * Typically, these messages are sent from other {@link Node} instances, but may also arrive from
- * other sources. A {@link Node} is intended to be used in the context of "think like a vertex" or
- * actor-based modeling, where each {@link Node} maintains internal state and may run concurrently
- * with other  {@link Node} instances.</p>
+ * <p>A computational unit in a message-passing network. A {@link Node} receives a stream of
+ * messages to process. Typically, these messages are sent from other {@link Node} instances, but
+ * may also arrive from other sources. A {@link Node} is intended to be used in the context of
+ * "think like a vertex" or actor-based modeling, where each {@link Node} maintains internal state
+ * and may run concurrently with other  {@link Node} instances.</p>
  * <p>The semantics of {@link #onNext(T)}, {@link #onError(Throwable)}, and {@link #onComplete()}
  * are similar to {@link Flow.Subscriber}. There are, however, a few semantic differences. First, a
  * {@link Node} may also publish messages, depending on the implementation of {@link #onNext(T)}.

@@ -15,7 +15,7 @@ public final class DefaultMessageFactory implements MessageFactory {
 
   /**
    * Creates an instance of {@link DefaultMessageFactory} that creates {@link DefaultMessage}
-   * instances with a given {@link #sender} and {@link #returnAddress}
+   * instances with a given {@code sender} and {@code returnAddress}.
    *
    * @param sender        The endpoint from which messages are sent.
    * @param returnAddress The endpoint to which replies to the sender can be sent.

@@ -2,7 +2,7 @@ package org.cirrus.messaging.core.message;
 
 /**
  * A factory that creates {@link Message} instances given only the body of the {@link Message}. This
- * allows for other attributes of a {@link Message} to be specified in externally.
+ * allows for other attributes of a {@link Message} to be specified externally.
  */
 public interface MessageFactory {
 
