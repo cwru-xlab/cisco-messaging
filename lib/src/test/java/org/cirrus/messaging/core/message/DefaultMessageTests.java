@@ -6,7 +6,7 @@ import org.junit.jupiter.api.function.Executable;
 
 
 @SuppressWarnings({"ResultOfMethodCallIgnored", "ConstantConditions"})
-final class AbstractDefaultMessageTests {
+final class DefaultMessageTests {
 
   private static final String NULL = null;
   private static final String EMPTY = "";
@@ -50,6 +50,9 @@ final class AbstractDefaultMessageTests {
       .setSender(SENDER)
       .setReturnAddress(RETURN_ADDRESS)
       .setBody(BODY);
+
+  private DefaultMessageTests() {
+  }
 
   @Test
   public void throwsNullPointerExceptionWhenSenderIsNull() {
