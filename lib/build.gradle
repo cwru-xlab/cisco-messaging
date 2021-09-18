@@ -56,6 +56,13 @@ test {
     useJUnitPlatform()
 }
 
+
+distributions {
+    main {
+        distributionBaseName = "$rootProject.name"
+    }
+}
+
 publishing {
     repositories {
         maven {
