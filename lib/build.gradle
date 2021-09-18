@@ -29,6 +29,7 @@ def versions = [
         JUnit     : "5.7.2"
 ]
 
+// GitHub repository name for publishing to GitHub Packages
 def repository = "project-cirrus"
 group "org.cirrus.messaging.core"
 version versions.Cirrus
@@ -61,8 +62,8 @@ publishing {
             name = "GitHubPackages"
             url = String.valueOf("https://maven.pkg.github.com/$repository/$rootProject.name")
             credentials {
-                username = System.getenv("GITHUB_ACTOR")
-                password = System.getenv("GITHUB_TOKEN")
+                username = System.getenv("USERNAME")
+                password = System.getenv("TOKEN")
             }
         }
     }
