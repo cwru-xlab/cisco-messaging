@@ -11,7 +11,7 @@ import org.immutables.value.Value;
 @Value.Immutable
 public abstract class AbstractDefaultMessage implements Message {
 
-  private static final String NO_SUBSCRIPTION = null;
+  private static final String NO_SUBSCRIPTION = "";
   private static final String INVALID_BODY = "'body' must not be empty or null";
   private static final String INVALID_SENDER = "'sender' must not be empty or null";
   private static final String INVALID_ADDRESS = "'returnAddress' must not be empty or null";
