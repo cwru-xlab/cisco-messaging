@@ -22,11 +22,11 @@ final class AbstractDefaultMessageTests {
       .setBody(BODY)
       .setReturnAddress(RETURN_ADDRESS)
       .setSubscription(SUBSCRIPTION);
-  private static final DefaultMessage.Builder NULL_RETURN_ADDRESS = DefaultMessage.newBuilder()
+  private static final DefaultMessage.Builder NULL_ADDRESS = DefaultMessage.newBuilder()
       .setSender(SENDER)
       .setBody(BODY)
       .setSubscription(SUBSCRIPTION);
-  private static final DefaultMessage.Builder EMPTY_RETURN_ADDRESS = DefaultMessage.newBuilder()
+  private static final DefaultMessage.Builder EMPTY_ADDRESS = DefaultMessage.newBuilder()
       .setSender(SENDER)
       .setBody(BODY)
       .setSubscription(SUBSCRIPTION);
@@ -46,62 +46,62 @@ final class AbstractDefaultMessageTests {
       .setSender(SENDER)
       .setReturnAddress(RETURN_ADDRESS)
       .setBody(BODY);
-  private static final DefaultMessage.Builder UNSPECIFIED_SUBSCRIPTION = DefaultMessage.newBuilder()
+  private static final DefaultMessage.Builder NO_SUBSCRIPTION = DefaultMessage.newBuilder()
       .setSender(SENDER)
       .setReturnAddress(RETURN_ADDRESS)
       .setBody(BODY);
 
   @Test
-  void throwsNullPointerExceptionWhenSenderIsNull() {
-    Executable build = () -> NULL_SENDER.setSender(NULL).build();
+  public void throwsNullPointerExceptionWhenSenderIsNull() {
+    final Executable build = () -> NULL_SENDER.setSender(NULL).build();
     Assertions.assertThrows(NullPointerException.class, build);
   }
 
   @Test
-  void throwsIllegalStateExceptionWhenSenderIsEmpty() {
-    Executable build = () -> EMPTY_SENDER.setSender(EMPTY).build();
+  public void throwsIllegalStateExceptionWhenSenderIsEmpty() {
+    final Executable build = () -> EMPTY_SENDER.setSender(EMPTY).build();
     Assertions.assertThrows(IllegalStateException.class, build);
   }
 
   @Test
-  void throwsNullPointerExceptionWhenReturnAddressIsNull() {
-    Executable build = () -> NULL_RETURN_ADDRESS.setReturnAddress(NULL).build();
+  public void throwsNullPointerExceptionWhenReturnAddressIsNull() {
+    final Executable build = () -> NULL_ADDRESS.setReturnAddress(NULL).build();
     Assertions.assertThrows(NullPointerException.class, build);
   }
 
   @Test
-  void throwsIllegalStateExceptionWhenReturnAddressIsEmpty() {
-    Executable build = () -> EMPTY_RETURN_ADDRESS.setReturnAddress(EMPTY).build();
+  public void throwsIllegalStateExceptionWhenReturnAddressIsEmpty() {
+    final Executable build = () -> EMPTY_ADDRESS.setReturnAddress(EMPTY).build();
     Assertions.assertThrows(IllegalStateException.class, build);
   }
 
   @Test
-  void throwsNullPointerExceptionWhenBodyIsNull() {
-    Executable build = () -> NULL_BODY.setBody(NULL).build();
+  public void throwsNullPointerExceptionWhenBodyIsNull() {
+    final Executable build = () -> NULL_BODY.setBody(NULL).build();
     Assertions.assertThrows(NullPointerException.class, build);
   }
 
   @Test
-  void throwsIllegalStateExceptionWhenBodyIsEmpty() {
-    Executable build = () -> EMPTY_BODY.setBody(EMPTY).build();
+  public void throwsIllegalStateExceptionWhenBodyIsEmpty() {
+    final Executable build = () -> EMPTY_BODY.setBody(EMPTY).build();
     Assertions.assertThrows(IllegalStateException.class, build);
   }
 
   @Test
-  void throwsNullPointerExceptionWhenSubscriptionIsNull() {
-    Executable build = () -> NULL_SUBSCRIPTION.setSubscription(NULL).build();
+  public void throwsNullPointerExceptionWhenSubscriptionIsNull() {
+    final Executable build = () -> NULL_SUBSCRIPTION.setSubscription(NULL).build();
     Assertions.assertThrows(NullPointerException.class, build);
   }
 
   @Test
-  void doesNotThrowExceptionWhenSubscriptionIsEmpty() {
-    Executable build = () -> EMPTY_SUBSCRIPTION.setSubscription(EMPTY).build();
+  public void doesNotThrowExceptionWhenSubscriptionIsEmpty() {
+    final Executable build = () -> EMPTY_SUBSCRIPTION.setSubscription(EMPTY).build();
     Assertions.assertDoesNotThrow(build);
   }
 
   @Test
-  void doesNotThrowExceptionWhenSubscriptionIsNotSpecified() {
-    Executable build = UNSPECIFIED_SUBSCRIPTION::build;
+  public void doesNotThrowExceptionWhenSubscriptionIsNotSpecified() {
+    final Executable build = NO_SUBSCRIPTION::build;
     Assertions.assertDoesNotThrow(build);
   }
 }
