@@ -51,7 +51,7 @@ final class DefaultMessageTests {
       .setReturnAddress(RETURN_ADDRESS)
       .setBody(BODY);
 
-  private DefaultMessageTests() {
+  public DefaultMessageTests() {
   }
 
   @Test
