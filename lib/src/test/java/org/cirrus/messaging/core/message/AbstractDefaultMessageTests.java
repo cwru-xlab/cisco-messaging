@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
 
-
 @SuppressWarnings({"ResultOfMethodCallIgnored", "ConstantConditions"})
 final class AbstractDefaultMessageTests {
 
@@ -14,42 +13,36 @@ final class AbstractDefaultMessageTests {
   private static final String RETURN_ADDRESS = "RETURN_ADDRESS";
   private static final String BODY = "BODY";
   private static final String SUBSCRIPTION = "SUBSCRIPTION";
-  private static final DefaultMessage.Builder NULL_SENDER = DefaultMessage.newBuilder()
-      .setBody(BODY)
-      .setReturnAddress(RETURN_ADDRESS)
-      .setSubscription(SUBSCRIPTION);
-  private static final DefaultMessage.Builder EMPTY_SENDER = DefaultMessage.newBuilder()
-      .setBody(BODY)
-      .setReturnAddress(RETURN_ADDRESS)
-      .setSubscription(SUBSCRIPTION);
-  private static final DefaultMessage.Builder NULL_RETURN_ADDRESS = DefaultMessage.newBuilder()
-      .setSender(SENDER)
-      .setBody(BODY)
-      .setSubscription(SUBSCRIPTION);
-  private static final DefaultMessage.Builder EMPTY_RETURN_ADDRESS = DefaultMessage.newBuilder()
-      .setSender(SENDER)
-      .setBody(BODY)
-      .setSubscription(SUBSCRIPTION);
-  private static final DefaultMessage.Builder NULL_BODY = DefaultMessage.newBuilder()
-      .setSender(SENDER)
-      .setReturnAddress(RETURN_ADDRESS)
-      .setSubscription(SUBSCRIPTION);
-  private static final DefaultMessage.Builder EMPTY_BODY = DefaultMessage.newBuilder()
-      .setSender(SENDER)
-      .setReturnAddress(RETURN_ADDRESS)
-      .setSubscription(SUBSCRIPTION);
-  private static final DefaultMessage.Builder NULL_SUBSCRIPTION = DefaultMessage.newBuilder()
-      .setSender(SENDER)
-      .setReturnAddress(RETURN_ADDRESS)
-      .setBody(BODY);
-  private static final DefaultMessage.Builder EMPTY_SUBSCRIPTION = DefaultMessage.newBuilder()
-      .setSender(SENDER)
-      .setReturnAddress(RETURN_ADDRESS)
-      .setBody(BODY);
-  private static final DefaultMessage.Builder UNSPECIFIED_SUBSCRIPTION = DefaultMessage.newBuilder()
-      .setSender(SENDER)
-      .setReturnAddress(RETURN_ADDRESS)
-      .setBody(BODY);
+  private static final DefaultMessage.Builder NULL_SENDER =
+      DefaultMessage.newBuilder()
+          .setBody(BODY)
+          .setReturnAddress(RETURN_ADDRESS)
+          .setSubscription(SUBSCRIPTION);
+  private static final DefaultMessage.Builder EMPTY_SENDER =
+      DefaultMessage.newBuilder()
+          .setBody(BODY)
+          .setReturnAddress(RETURN_ADDRESS)
+          .setSubscription(SUBSCRIPTION);
+  private static final DefaultMessage.Builder NULL_RETURN_ADDRESS =
+      DefaultMessage.newBuilder().setSender(SENDER).setBody(BODY).setSubscription(SUBSCRIPTION);
+  private static final DefaultMessage.Builder EMPTY_RETURN_ADDRESS =
+      DefaultMessage.newBuilder().setSender(SENDER).setBody(BODY).setSubscription(SUBSCRIPTION);
+  private static final DefaultMessage.Builder NULL_BODY =
+      DefaultMessage.newBuilder()
+          .setSender(SENDER)
+          .setReturnAddress(RETURN_ADDRESS)
+          .setSubscription(SUBSCRIPTION);
+  private static final DefaultMessage.Builder EMPTY_BODY =
+      DefaultMessage.newBuilder()
+          .setSender(SENDER)
+          .setReturnAddress(RETURN_ADDRESS)
+          .setSubscription(SUBSCRIPTION);
+  private static final DefaultMessage.Builder NULL_SUBSCRIPTION =
+      DefaultMessage.newBuilder().setSender(SENDER).setReturnAddress(RETURN_ADDRESS).setBody(BODY);
+  private static final DefaultMessage.Builder EMPTY_SUBSCRIPTION =
+      DefaultMessage.newBuilder().setSender(SENDER).setReturnAddress(RETURN_ADDRESS).setBody(BODY);
+  private static final DefaultMessage.Builder UNSPECIFIED_SUBSCRIPTION =
+      DefaultMessage.newBuilder().setSender(SENDER).setReturnAddress(RETURN_ADDRESS).setBody(BODY);
 
   @Test
   void throwsNullPointerExceptionWhenSenderIsNull() {
