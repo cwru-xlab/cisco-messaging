@@ -1,8 +1,6 @@
 package org.cirrus.messaging.core.message;
 
-/**
- * A {@link MessageFactory} that creates {@link DefaultMessage} instances.
- */
+/** A {@link MessageFactory} that creates {@link DefaultMessage} instances. */
 public final class DefaultMessageFactory implements MessageFactory {
 
   private final String sender;
@@ -17,7 +15,7 @@ public final class DefaultMessageFactory implements MessageFactory {
    * Creates an instance of {@link DefaultMessageFactory} that creates {@link DefaultMessage}
    * instances with a given {@code sender} and {@code returnAddress}.
    *
-   * @param sender        The endpoint from which messages are sent.
+   * @param sender The endpoint from which messages are sent.
    * @param returnAddress The endpoint to which replies to the sender can be sent.
    * @return An instance of {@link DefaultMessageFactory}.
    */
