@@ -11,6 +11,8 @@ plugins {
     id "java-library"
     // Support building a distribution ZIP that contains the JAR file and the library dependencies.
     id "java-library-distribution"
+    // Support publishing build artifacts to an Apache Maven repository.
+    id "maven-publish"
 }
 
 repositories {
@@ -27,6 +29,7 @@ def versions = [
         JUnit     : "5.7.2"
 ]
 
+repository = "project-cirrus"
 group "org.cirrus.messaging.core"
 version versions.Cirrus
 
@@ -39,6 +42,7 @@ java {
 dependencies {
     // This dependency is used for code generation from annotated code.
     annotationProcessor "org.immutables:value:$versions.Immutables"
+    // This dependency is only used to compile the source code.
     compileOnly "org.immutables:value:$versions.Immutables"
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation "com.google.guava:guava:$versions.Guava"
@@ -49,4 +53,17 @@ dependencies {
 test {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
+}
+
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = String.valueOf("https://maven.pkg.github.com/$repository/$rootProject.name")
+            credentials {
+                username = System.getenv("GITHUB_ACTOR")
+                password = System.getenv("GITHUB_TOKEN")
+            }
+        }
+    }
 }
