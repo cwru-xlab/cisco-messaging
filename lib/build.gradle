@@ -57,9 +57,9 @@ test {
 }
 
 distributions {
-    main {
+    main({
         distributionBaseName = "$rootProject.name"
-    }
+    } as String)
 }
 
 publishing {
