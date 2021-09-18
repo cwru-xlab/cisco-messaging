@@ -52,6 +52,7 @@ final class DefaultMessageTests {
       .setBody(BODY);
 
   public DefaultMessageTests() {
+    // Fixes "Uncommented Empty Constructor" PMD 3.4 violation
   }
 
   @Test
