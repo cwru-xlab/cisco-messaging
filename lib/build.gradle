@@ -29,7 +29,7 @@ def versions = [
         JUnit     : "5.7.2"
 ]
 
-repository = "project-cirrus"
+def repository = "project-cirrus"
 group "org.cirrus.messaging.core"
 version versions.Cirrus
 
