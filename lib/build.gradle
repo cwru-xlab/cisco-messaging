@@ -33,7 +33,7 @@ def versions = [
 def organization = "project-cirrus"
 // GitHub repository for publishing to GitHub Packages
 def repository = String.valueOf("$rootProject.name")
-group "org.cirrus.messaging.core"
+group "org.cirrus"
 version versions.Cirrus
 
 java {
@@ -77,10 +77,11 @@ publishing {
         }
     }
     publications {
-        //noinspection GroovyAssignabilityCheck
         gpr(MavenPublication) {
-            //noinspection GroovyAssignabilityCheck
-            from(components.java)
+            groupId = group
+            artifactId = repository
+            version = versions.Cirrus
+            from components.java
         }
     }
 }
