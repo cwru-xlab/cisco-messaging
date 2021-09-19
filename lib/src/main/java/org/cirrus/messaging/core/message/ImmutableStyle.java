@@ -18,7 +18,7 @@ import org.immutables.value.Value.Style.ImplementationVisibility;
     typeImmutable = "*",
     deepImmutablesDetection = true,
     depluralize = true,
-    visibility = ImplementationVisibility.PACKAGE,
+    visibility = ImplementationVisibility.PUBLIC,
     of = "new",
     defaults = @Value.Immutable(prehash = true))
 @interface ImmutableStyle {

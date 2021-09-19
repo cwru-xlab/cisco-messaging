@@ -9,7 +9,7 @@ import org.immutables.value.Value;
  * non-empty.
  */
 @Value.Immutable
-public abstract class AbstractDefaultMessage implements Message {
+abstract class AbstractDefaultMessage implements Message {
 
   private static final String NO_SUBSCRIPTION = "";
   private static final String INVALID_BODY = "'body' must not be empty or null";
