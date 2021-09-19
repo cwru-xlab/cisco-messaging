@@ -1,5 +1,7 @@
 package org.cirrus.messaging.core.message;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
 import org.immutables.value.Value;
@@ -9,6 +11,8 @@ import org.immutables.value.Value;
  * non-empty.
  */
 @Value.Immutable
+@JsonSerialize(as = DefaultMessage.class)
+@JsonDeserialize(as = DefaultMessage.class)
 abstract class AbstractDefaultMessage implements Message {
 
   private static final String NO_SUBSCRIPTION = "";

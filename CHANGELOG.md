@@ -1,5 +1,19 @@
 # Change Log
 
+## __0.1.7__
+
+### New Features
+
+- None
+
+### Enhancements
+
+- Support JSON serialization and deserialization of `DefaultMessage`.
+
+### Bug Fixes
+
+- None
+
 ## __0.1.6__
 
 ### New Features
