@@ -22,7 +22,7 @@ repositories {
 
 // Versions of all dependencies, organized in descending alphabetical order.
 def versions = [
-        Cirrus    : "0.1.0",
+        Cirrus    : "0.1.1",
         Guava     : "30.1-jre",
         Immutables: "2.8.8",
         Java      : "11",
