@@ -1,5 +1,20 @@
 # Change Log
 
+## __0.1.5__
+
+### New Features
+
+- None
+
+### Enhancements
+
+- Allow both local credentials (`gpr.user` and `gpr.key`) or remote credentials (`GITHUB_ACTOR`
+  and `GITHUB_TOKEN`) to publish packages.
+
+### Bug Fixes
+
+- Expose generated implementation of `DefaultMessage` to access builder.
+
 ## __0.1.4__
 
 ### New Features
