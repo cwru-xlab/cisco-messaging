@@ -1,5 +1,21 @@
 # Change Log
 
+## __0.1.6__
+
+### New Features
+
+- None
+
+### Enhancements
+
+- None
+
+### Bug Fixes
+
+- Revert credentials environment variables to `GITHUB_ACTOR` and `GITHUB_TOKEN` to `USERNAME`
+  and `TOKEN` as these are their names in the `gradle-publish.yml` workflow. This is an attempt to
+  resolve `gradle-publish` workflow failures.
+
 ## __0.1.5__
 
 ### New Features
