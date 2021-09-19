@@ -29,8 +29,10 @@ def versions = [
         JUnit     : "5.7.2"
 ]
 
-// GitHub repository name for publishing to GitHub Packages
-def repository = "project-cirrus"
+// GitHub organization for publishing to GitHub Packages
+def organization = "project-cirrus"
+// GitHub repository for publishing to GitHub Packages
+def repository = String.valueOf("$rootProject.name")
 group "org.cirrus.messaging.core"
 version versions.Cirrus
 
@@ -59,7 +61,7 @@ test {
 distributions {
     //noinspection GroovyAssignabilityCheck
     main {
-        distributionBaseName = "$rootProject.name"
+        distributionBaseName = repository
     }
 }
 
@@ -67,11 +69,18 @@ publishing {
     repositories {
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/$repository/$rootProject.name")
+            url = uri("https://maven.pkg.github.com/$organization/$repository")
             credentials {
                 username = System.getenv("GITHUB_ACTOR")
                 password = System.getenv("GITHUB_TOKEN")
             }
+        }
+    }
+    publications {
+        //noinspection GroovyAssignabilityCheck
+        gpr(MavenPublication) {
+            //noinspection GroovyAssignabilityCheck
+            from(components.java)
         }
     }
 }
