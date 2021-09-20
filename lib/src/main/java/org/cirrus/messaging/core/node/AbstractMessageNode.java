@@ -13,8 +13,8 @@ public abstract class AbstractMessageNode extends AbstractNode<Message> {
 
   private final MessageFactory messageFactory;
 
-  protected AbstractMessageNode(Publisher<Message> publisher, Subscriber subscriber,
-      MessageFactory messageFactory) {
+  protected AbstractMessageNode(
+      Publisher<Message> publisher, Subscriber subscriber, MessageFactory messageFactory) {
     super(publisher, subscriber);
     this.messageFactory = messageFactory;
   }

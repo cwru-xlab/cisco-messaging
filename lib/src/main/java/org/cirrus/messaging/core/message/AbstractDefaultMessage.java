@@ -24,21 +24,6 @@ abstract class AbstractDefaultMessage implements Message {
     // Fix "At Least One Constructor" Checkstyle violation
   }
 
-  @Override
-  public abstract String getSender();
-
-  @Override
-  public abstract String getReturnAddress();
-
-  @Override
-  @Value.Default
-  public String getSubscription() {
-    return NO_SUBSCRIPTION;
-  }
-
-  @Override
-  public abstract String getBody();
-
   @Value.Check
   protected final void checkBody() {
     Preconditions.checkState(!Strings.isNullOrEmpty(getBody()), INVALID_BODY);
@@ -53,4 +38,19 @@ abstract class AbstractDefaultMessage implements Message {
   protected final void checkReturnAddress() {
     Preconditions.checkState(!Strings.isNullOrEmpty(getReturnAddress()), INVALID_ADDRESS);
   }
+
+  @Override
+  public abstract String getSender();
+
+  @Override
+  public abstract String getReturnAddress();
+
+  @Override
+  @Value.Default
+  public String getSubscription() {
+    return NO_SUBSCRIPTION;
+  }
+
+  @Override
+  public abstract String getBody();
 }

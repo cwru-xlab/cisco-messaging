@@ -40,5 +40,4 @@ public interface Message {
    * @return The body associated with the message.
    */
   public abstract String getBody();
-
 }
