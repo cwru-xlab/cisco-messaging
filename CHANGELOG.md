@@ -1,5 +1,19 @@
 # Change Log
 
+## __0.1.8__
+
+### New Features
+
+- None
+
+### Enhancements
+
+- Add javadoc and sources build artifacts to support viewing documentation in an IDE.
+
+### Bug Fixes
+
+- None
+
 ## __0.1.7__
 
 ### New Features
