@@ -8,13 +8,13 @@ import java.util.concurrent.Flow;
  * may also arrive from other sources. A {@link Node} is intended to be used in the context of
  * "think like a vertex" or actor-based modeling, where each {@link Node} maintains internal state
  * and may run concurrently with other  {@link Node} instances.</p>
- * <p>The semantics of {@link #onNext(T)}, {@link #onError(Throwable)}, and {@link #onComplete()}
- * are similar to {@link Flow.Subscriber}. There are, however, a few semantic differences. First, a
- * {@link Node} may also publish messages, depending on the implementation of {@link #onNext(T)}.
- * Second, the flow of messages may either be push-based or pull-based, depending on whichever is
- * preferred by the implementation. Third, {@link #onComplete()} need not correspond to the end of a
- * {@link Flow.Subscription}. It may also refer to other contexts, such as when the {@link Node}
- * will be removed from the network.</p>
+ * <p>The semantics of {@link #onNext(Object)}, {@link #onError(Throwable)}, and {@link
+ * #onComplete()} are similar to {@link Flow.Subscriber}. There are, however, a few semantic
+ * differences. First, a {@link Node} may also publish messages, depending on the implementation of
+ * {@link #onNext(Object)}. Second, the flow of messages may either be push-based or pull-based,
+ * depending on whichever is preferred by the implementation. Third, {@link #onComplete()} need not
+ * correspond to the end of a {@link Flow.Subscription}. It may also refer to other contexts, such
+ * as when the {@link Node} will be removed from the network.</p>
  *
  * @param <T> The type of message the {@link Node} processes.
  */
@@ -28,8 +28,8 @@ public interface Node<T> {
   public abstract void onNext(T message);
 
   /**
-   * Invoked either externally or by {@link #onNext(T)} when an error occurs in the processing of a
-   * message.
+   * Invoked either externally or by {@link #onNext(Object)} when an error occurs in the processing
+   * of a message.
    *
    * @param throwable The exception corresponding to the error that occurred.
    */
